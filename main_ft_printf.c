@@ -1,100 +1,343 @@
 #include "ft_printf.h"
 #include <stdio.h>
+#include <limits.h>
 
 int	main(void)
 {
 	int	count;
 	int	ft_count;
-	unsigned int	test;
-	void	*p1;
-	void	*p2;
-	void	*p3;
 	
-	p1 = NULL;
-	p2 = NULL;
-	p3 = NULL;
-
-	test = -2147483648;
 	count = 0;
 	ft_count = 0;
 
 	printf("\tTEST_NULL\n");
 	count = printf(NULL);
 	ft_count = ft_printf(NULL);
-	printf("\nprintf:%d\n", count);
-	printf("ft_printf:%d\n\n", ft_count);
+	printf("\nprintf:|%d|\n", count);
+	printf("\nft_printf:|%d|\n\n\n", ft_count);
+
+
 
 	printf("\n\tTEST_INT\n");
-	count = printf("OG-----int|%i|\n", -10);
-	ft_count = ft_printf("ME-----int|%i|\n", -10);
+	printf("OG-----int|");
+	count = printf("%i", INT_MIN);
+	printf("|\n");
+	ft_printf("ME-----int|");
+	ft_count = printf("%i", INT_MIN);
+	printf("|\n");
 	printf("\nprintf:%d\n", count);
 	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----int|");
+	count = printf("%i", 0);
+	printf("|\n");
+	ft_printf("ME-----int|");
+	ft_count = printf("%i", 0);
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----int|");
+	count = printf("%i", INT_MAX);
+	printf("|\n");
+	ft_printf("ME-----int|");
+	ft_count = printf("%i", INT_MAX);
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----int|");
+	count = printf("%i%i%i", INT_MIN, 0, INT_MAX);
+	printf("|\n");
+	ft_printf("ME-----int|");
+	ft_count = printf("%i%i%i", INT_MIN, 0, INT_MAX);
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n\n", ft_count);
+
+
 
 	printf("\n\tTEST_DECIMAL\n");
-	count = printf("OG-----dec|%d|\n", 19);
-	ft_count = ft_printf("ME-----dec|%d|\n", 19);
+	printf("OG-----dec|");
+	count = printf("%d", INT_MIN);
+	printf("|\n");
+	ft_printf("ME-----dec|");
+	ft_count = printf("%d", INT_MIN);
+	printf("|\n");
 	printf("\nprintf:%d\n", count);
 	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----dec|");
+	count = printf("%d", 0);
+	printf("|\n");
+	ft_printf("ME-----dec|");
+	ft_count = printf("%d", 0);
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----dec|");
+	count = printf("%d", INT_MAX);
+	printf("|\n");
+	ft_printf("ME-----dec|");
+	ft_count = printf("%d", INT_MAX);
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----dec|");
+	count = printf("%d%d%d", INT_MIN, 0, INT_MAX);
+	printf("|\n");
+	ft_printf("ME-----dec|");
+	ft_count = printf("%d%d%d", INT_MIN, 0, INT_MAX);
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n\n", ft_count);
+
+
 
 	printf("\n\tTEST_UNSIGNED_INT\n");
-	count = printf("OG-----u_int|%u|\n", 659);
-	ft_count = ft_printf("ME-----u_int|%u|\n", 659);
+	printf("OG-----uint|");
+	count = printf("%u", 0);
+	printf("|\n");
+	ft_printf("ME-----uint|");
+	ft_count = printf("%u", 0);
+	printf("|\n");
+	printf("\nprintf:%u\n", count);
+	printf("ft_printf:%u\n", ft_count);
+
+	printf("OG-----uint|");
+	count = printf("%u", UINT_MAX);
+	printf("|\n");
+	ft_printf("ME-----uint|");
+	ft_count = printf("%u", UINT_MAX);
+	printf("|\n");
+	printf("\nprintf:%u\n", count);
+	printf("ft_printf:%u\n\n", ft_count);
+
+	printf("OG-----uint|");
+	count = printf("%u", 1024);
+	printf("|\n");
+	ft_printf("ME-----uint|");
+	ft_count = printf("%u", 1024);
+	printf("|\n");
+	printf("\nprintf:%u\n", count);
+	printf("ft_printf:%u\n\n", ft_count);
+
+	printf("OG-----uint|");
+	count = printf("%u%u%u", 0, 1024, UINT_MAX);
+	printf("|\n");
+	ft_printf("ME-----uint|");
+	ft_count = printf("%u%u%u", 0, 1024, UINT_MAX);
+	printf("|\n");
 	printf("\nprintf:%d\n", count);
-	printf("ft_printf:%d\n\n", ft_count);
+	printf("ft_printf:%d\n\n\n", ft_count);
+
+
 
 	printf("\n\tTEST_CHAR\n");
-	count = printf("OG-----char|%c|\n", 'A');
-	ft_count = ft_printf("ME-----char|%c|\n", 'A');
+	printf("OG-----char|");
+	count = printf("%c", '\0');
+	printf("|\n");
+	ft_printf("ME-----char|");
+	ft_count = printf("%c", '\0');
+	printf("|\n");
 	printf("\nprintf:%d\n", count);
 	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----char|");
+	count = printf("%c", 'W');
+	printf("|\n");
+	ft_printf("ME-----char|");
+	ft_count = printf("%c", 'W');
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----char|");
+	count = printf("%c%c", '\0', 'W');
+	printf("|\n");
+	ft_printf("ME-----char|");
+	ft_count = printf("%c%c", '\0', 'W');
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n\n", ft_count);
+
+
 
 	printf("\n\tTEST_STRING\n");
-	count = printf("OG-----str|%s|\n", "test");
-	ft_count = ft_printf("ME-----str|%s|\n", "test");
+	printf("OG-----str|");
+	count = printf("%s", NULL);
+	printf("|\n");
+	ft_printf("ME-----str|");
+	ft_count = printf("%s", NULL);
+	printf("|\n");
 	printf("\nprintf:%d\n", count);
 	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----str|");
+	count = printf("%s", "");
+	printf("|\n");
+	ft_printf("ME-----str|");
+	ft_count = printf("%s", "");
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----str|");
+	count = printf("%s", "Hello");
+	printf("|\n");
+	ft_printf("ME-----str|");
+	ft_count = printf("%s", "Hello");
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----str|");
+	count = printf("%s%s%s", NULL, "", "Hello");
+	printf("|\n");
+	ft_printf("ME-----str|");
+	ft_count = printf("%s%s%s", NULL, "", "Hello");
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n\n", ft_count);
+
+
 
 	printf("\n\tTEST_HEX_LOWERCASE\n");
-	count = printf("OG-----hex|%x|\n", 64);
-	ft_count = ft_printf("ME-----hex|%x|\n", 64);
+	printf("OG-----hex|");
+	count = printf("%x", 0);
+	printf("|\n");
+	ft_printf("ME-----hex|");
+	ft_count = printf("%x", 0);
+	printf("|\n");
 	printf("\nprintf:%d\n", count);
 	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----hex|");
+	count = printf("%x", 1024);
+	printf("|\n");
+	ft_printf("ME-----hex|");
+	ft_count = printf("%x", 1024);
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----hex|");
+	count = printf("%x", UINT_MAX);
+	printf("|\n");
+	ft_printf("ME-----hex|");
+	ft_count = printf("%x", UINT_MAX);
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----hex|");
+	count = printf("%x%x%x", 0, 1024, UINT_MAX);
+	printf("|\n");
+	ft_printf("ME-----hex|");
+	ft_count = printf("%x%x%x", 0, 1024, UINT_MAX);
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n\n", ft_count);
+
+
 
 	printf("\n\tTEST_HEX_UPPERCASE\n");
-	count = printf("OG-----HEX|%X|\n", 64);
-	ft_count = ft_printf("ME-----HEX|%X|\n", 64);
+	printf("OG-----HEX|");
+	count = printf("%X", 0);
+	printf("|\n");
+	ft_printf("ME-----HEX|");
+	ft_count = printf("%X", 0);
+	printf("|\n");
 	printf("\nprintf:%d\n", count);
 	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----HEX|");
+	count = printf("%X", 1024);
+	printf("|\n");
+	ft_printf("ME-----HEX|");
+	ft_count = printf("%X", 1024);
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----HEX|");
+	count = printf("%X", UINT_MAX);
+	printf("|\n");
+	ft_printf("ME-----HEX|");
+	ft_count = printf("%X", UINT_MAX);
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----HEX|");
+	count = printf("%X%X%X", 0, 1024, UINT_MAX);
+	printf("|\n");
+	ft_printf("ME-----HEX|");
+	ft_count = printf("%X%X%X", 0, 1024, UINT_MAX);
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n\n", ft_count);
+
+
 
 	printf("\n\tTEST_POINTER\n");
-	count = printf("OG-----ptr|%p|\n", p1);
-	ft_count = ft_printf("ME-----ptr|%p|\n", p1);
+	printf("OG-----ptr|");
+	count = printf("%p", NULL);
+	printf("|\n");
+	ft_printf("ME-----ptr|");
+	ft_count = printf("%p", NULL);
+	printf("|\n");
 	printf("\nprintf:%d\n", count);
 	printf("ft_printf:%d\n\n", ft_count);
 
-	p2 = &count;
-	count = printf("OG-----ptr|%p|\n", p2);
-	ft_count = ft_printf("ME-----ptr|%p|\n", p2);
+	printf("OG-----ptr|");
+	count = printf("%p", 0);
+	printf("|\n");
+	ft_printf("ME-----ptr|");
+	ft_count = printf("%p", 0);
+	printf("|\n");
 	printf("\nprintf:%d\n", count);
 	printf("ft_printf:%d\n\n", ft_count);
 
-	p3 = &ft_count;
-	count = printf("OG-----ptr|%p|\n", p3);
-	ft_count = ft_printf("ME-----ptr|%p|\n", p3);
+	printf("OG-----ptr|");
+	count = printf("%p", "NULL");
+	printf("|\n");
+	ft_printf("ME-----ptr|");
+	ft_count = printf("%p", "NULL");
+	printf("|\n");
 	printf("\nprintf:%d\n", count);
 	printf("ft_printf:%d\n\n", ft_count);
+
+	printf("OG-----ptr|");
+	count = printf("%p%p%p", NULL, 0, "NULL");
+	printf("|\n");
+	ft_printf("ME-----ptr|");
+	ft_count = printf("%p%p%p", NULL, 0, "NULL");
+	printf("|\n");
+	printf("\nprintf:%d\n", count);
+	printf("ft_printf:%d\n\n\n", ft_count);
+
+
 
 	printf("\n\tTEST_MIX\n");
-	count = printf("OG-----plop%d%i%u%c%s%x%X%p\n", 0, 0, 0, 'c', "str", 255, 255, p2);
-	ft_count = ft_printf("ME-----plop%d%i%u%c%s%x%X%p\n", 0, 0, 0, 'c', "str", 255, 255, p2);
+	printf("OG-----mix|");
+	count = printf("%d%i%u%c%s%x%X%p", 0, 0, 0, 'c', "str", 255, 255, "NULL");
+	printf("|\n");
+	ft_printf("ME-----mix|");
+	ft_count = printf("%d%i%u%c%s%x%X%p", 0, 0, 0, 'c', "str", 255, 255, "NULL");
+	printf("|\n");
 	printf("\nprintf:%d\n", count);
 	printf("ft_printf:%d\n\n", ft_count);
 
-	count = printf("OG-----\nprc|%%|\nchar|%c|\nstr|%s|\nu_int|%u|\ndec|%d|\nint|%i|\nhex|%x|\nHEX|%X|\nptr|%p|\n", 'W', "yo", test, test, test, 255, 255, p3);
+	count = printf("OG-----mix\nprc|%%|\nchar|%c|\nstr|%s|\nu_int|%u|\ndec|%d|\nint|%i|\nhex|%x|\nHEX|%X|\nptr|%p|\n", 'W', "yo", test, test, test, 255, 255, "NULL");
 	printf("\n");
-	ft_count = ft_printf("ME-----\nprc|%%|\nchar|%c|\nstr|%s|\nu_int|%u|\ndec|%d|\nint|%i|\nhex|%x|\nHEX|%X|\nptr|%p|\n", 'W', "yo", test, test, test, 255, 255, p3);
+	ft_count = ft_printf("ME-----mix\nprc|%%|\nchar|%c|\nstr|%s|\nu_int|%u|\ndec|%d|\nint|%i|\nhex|%x|\nHEX|%X|\nptr|%p|\n", 'W', "yo", test, test, test, 255, 255, "NULL");
 	printf("\nprintf:%d\n", count);
-	printf("ft_printf:%d\n\n", ft_count);
+	printf("ft_printf:%d\n\n\n", ft_count);
+
+
 
 	printf("\n\tTEST_PERCENT\n");
 	count = printf("OG-----s%Q\n");
