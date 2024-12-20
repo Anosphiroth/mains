@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+//#include "ft_printf.h"
 #include <stdio.h>
 #include <limits.h>
 
@@ -331,9 +331,9 @@ int	main(void)
 	printf("\nprintf:%d\n", count);
 	printf("ft_printf:%d\n\n", ft_count);
 
-	count = printf("OG-----mix\nprc|%%|\nchar|%c|\nstr|%s|\nu_int|%u|\ndec|%d|\nint|%i|\nhex|%x|\nHEX|%X|\nptr|%p|\n", 'W', "yo", test, test, test, 255, 255, "NULL");
+	count = printf("OG-----mix\nprc|%%|\nchar|%c|\nstr|%s|\nu_int|%u|\ndec|%d|\nint|%i|\nhex|%x|\nHEX|%X|\nptr|%p|\n", 'W', "yo", UINT_MAX, INT_MAX, INT_MAX, 255, 255, "NULL");
 	printf("\n");
-	ft_count = ft_printf("ME-----mix\nprc|%%|\nchar|%c|\nstr|%s|\nu_int|%u|\ndec|%d|\nint|%i|\nhex|%x|\nHEX|%X|\nptr|%p|\n", 'W', "yo", test, test, test, 255, 255, "NULL");
+	ft_count = ft_printf("ME-----mix\nprc|%%|\nchar|%c|\nstr|%s|\nu_int|%u|\ndec|%d|\nint|%i|\nhex|%x|\nHEX|%X|\nptr|%p|\n", 'W', "yo", UINT_MAX, INT_MAX, INT_MAX, 255, 255, "NULL");
 	printf("\nprintf:%d\n", count);
 	printf("ft_printf:%d\n\n\n", ft_count);
 
