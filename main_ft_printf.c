@@ -1,4 +1,4 @@
-//#include "ft_printf.h"
+#include "ft_printf.h"
 #include <stdio.h>
 #include <limits.h>
 
@@ -339,27 +339,27 @@ int	main(void)
 
 
 
-	printf("\n\tTEST_PERCENT\n");
-	count = printf("OG-----s%Q\n");
-	ft_count = ft_printf("ME-----s%Q\n");
-	printf("\nprintf:%d\n", count);
-	printf("ft_printf:%d\n\n", ft_count);
+	// printf("\n\tTEST_WARNINGS\n");
+	// count = printf("OG-----s%Q\n");
+	// ft_count = ft_printf("ME-----s%Q\n");
+	// printf("\nprintf:%d\n", count);
+	// printf("ft_printf:%d\n\n", ft_count);
 
-	count = printf("OG-----d%");
-	printf("\n");
-	ft_count = ft_printf("ME-----d%");
-	printf("\n");
-	printf("\nprintf:%d\n", count);
-	printf("ft_printf:%d\n\n", ft_count);
+	// count = printf("OG-----d%");
+	// printf("\n");
+	// ft_count = ft_printf("ME-----d%");
+	// printf("\n");
+	// printf("\nprintf:%d\n", count);
+	// printf("ft_printf:%d\n\n", ft_count);
 
-	printf("OG-----");
-	count = printf("%");
-	printf("\n");
-	printf("ME-----");
-	ft_count = ft_printf("%");
-	printf("\n");
-	printf("\nprintf:%d\n", count);
-	printf("ft_printf:%d\n\n", ft_count);
+	// printf("OG-----");
+	// count = printf("%");
+	// printf("\n");
+	// printf("ME-----");
+	// ft_count = ft_printf("%");
+	// printf("\n");
+	// printf("\nprintf:%d\n", count);
+	// printf("ft_printf:%d\n\n", ft_count);
 
 	return (0);
 }
