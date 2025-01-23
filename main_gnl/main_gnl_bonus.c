@@ -20,21 +20,21 @@ int main_get_next_line_bonus(void)
 	while (i < 10)
 	{
 		test = get_next_line(fd1);
-		printf("test.txt Line #%d\n{%s}\n", i, test);
+		printf("test.txt Line #%d\n{%s}\n\n", i, test);
 		free(test);
 		test = get_next_line(fd2);
-		printf("lorem_ipsum.txt Line #%d\n{%s}\n", i, test);
+		printf("lorem_ipsum.txt Line #%d\n{%s}\n\n", i, test);
 		free(test);
 		test = get_next_line(fd3);
-		printf("vendetta.txt Line #%d\n{%s}\n", i, test);
+		printf("vendetta.txt Line #%d\n{%s}\n\n", i, test);
 		free(test);
 		test = get_next_line(-1);
-		printf("Invalid Line #%d\n{%s}\n", i, test);
+		printf("Invalid Line #%d\n{%s}\n\n", i, test);
 		free(test);
 		test = get_next_line(fd4);
-		printf("bible.txt Line #%d\n{%s}\n", i, test);
+		printf("bible.txt Line #%d\n{%s}\n\n", i, test);
 		free(test);
-		printf("\n");
+		printf("\n\n");
 		i++;
 	}
 	close(fd1);
