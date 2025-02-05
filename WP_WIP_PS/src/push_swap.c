@@ -81,9 +81,8 @@ int	main(int c, char *v[])
 	array = dup_stack_in_array(stack_a, c - 1, stack_b);
 	sort_array(array, c - 1);
 	indexing_stack(&stack_a, array, c - 1);
-	//stacks_index_display(stack_a, stack_b, c - 1);
 	push_swap(stack_a, stack_b, c - 1);
-	//stacks_index_display(stack_a, stack_b, c - 1);
+	stacks_index_display(stack_a, stack_b, c - 1);
 	free_stacks(stack_a, stack_b);
 	return (0);
 }

@@ -70,6 +70,6 @@ void	push(t_stack **stack_to, t_stack **stack_from, size_t **s_to,
 		(*stack_from)[i] = (*stack_from)[i + 1];
 		i++;
 	}
-	(*stack_from)[i] = (t_stack){.value = 0, .srt_index = -1};
+	(*stack_from)[i] = (t_stack){.value = 0, .srt_indx = -1};
 	(**s_from)--;
 }

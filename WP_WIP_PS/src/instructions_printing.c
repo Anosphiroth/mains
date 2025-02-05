@@ -44,24 +44,23 @@ void	exec_print_smart_rotate(t_stack **stack, char stack_name, t_stack elem,
 {
 	int	index;
 
-	index = find_index(*stack, elem.srt_index, size);
+	index = find_index(*stack, elem.srt_indx, size);
 	if (index > (int)size / 2)
 		exec_print_reverse_rotate(stack, stack_name, size);
 	else
 		exec_print_rotate(stack, stack_name, size);
 }
 
-void	exec_print_push(t_stack **a, t_stack **b, char stack_name, t_size size)
+void	exec_print_push(t_stack **a, t_stack **b, char stack_name, t_stk_size size)
 {
 	if (stack_name == 'a')
 	{
 		ft_printf("pa\n");
-		push(a, b, &size.size_a, &size.size_b);
+		push(a, b, &size.s_a, &size.s_b);
 	}
 	else if (stack_name == 'b')
 	{
 		ft_printf("pb\n");
-		push(b, a, &size.size_b, &size.size_a);
+		push(b, a, &size.s_b, &size.s_a);
 	}
-	ft_printf("size_a: %d   size_b: %d\n", (int)*size.size_a, (int)*size.size_b);
 }

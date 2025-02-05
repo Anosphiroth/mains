@@ -20,7 +20,7 @@ void	stacks_index_display(t_stack *a, t_stack *b, size_t size)
 	ft_printf("a\t\tb\n-\t\t-\n");
 	while (i < size)
 	{
-		ft_printf("%d\t\t%d\n", (int)a[i].srt_index, (int)b[i].srt_index);
+		ft_printf("%d\t\t%d\n", (int)a[i].srt_indx, (int)b[i].srt_indx);
 		i++;
 	}
 	ft_printf("-\t\t-\n");
@@ -49,7 +49,7 @@ int	is_sorted(t_stack *stack, int act, size_t size)
 	{
 		while (i + 1 < size)
 		{
-			if (stack[i].srt_index > stack[i + 1].srt_index)
+			if (stack[i].srt_indx > stack[i + 1].srt_indx)
 				return (0);
 			i++;
 		}
@@ -58,7 +58,7 @@ int	is_sorted(t_stack *stack, int act, size_t size)
 	{
 		while (i + 1 < size)
 		{
-			if (stack[i].srt_index < stack[i + 1].srt_index)
+			if (stack[i].srt_indx < stack[i + 1].srt_indx)
 				return (0);
 			i++;
 		}

@@ -20,14 +20,14 @@ size_t	find_smaller_index(t_stack *stack, int index, size_t size)
 
 	i = 0;
 	ret = where_is_smallest_index(stack, size);
-	tmp = stack[ret].srt_index;
+	tmp = stack[ret].srt_indx;
 	while (i < size)
 	{
-		if (stack[i].srt_index < index && stack[i].srt_index > tmp
-			&& stack[i].srt_index > stack[where_is_smallest_index(stack,
-					size)].srt_index)
+		if (stack[i].srt_indx < index && stack[i].srt_indx > tmp
+			&& stack[i].srt_indx > stack[where_is_smallest_index(stack,
+					size)].srt_indx)
 		{
-			tmp = stack[i].srt_index;
+			tmp = stack[i].srt_indx;
 			ret = i;
 		}
 		i++;
@@ -43,14 +43,14 @@ size_t	find_bigger_index(t_stack *stack, int index, size_t size)
 
 	i = 0;
 	ret = where_is_biggest_index(stack, size);
-	tmp = stack[ret].srt_index;
+	tmp = stack[ret].srt_indx;
 	while (i < size)
 	{
-		if (stack[i].srt_index > index && stack[i].srt_index < tmp
-			&& stack[i].srt_index < stack[where_is_biggest_index(stack,
-					size)].srt_index)
+		if (stack[i].srt_indx > index && stack[i].srt_indx < tmp
+			&& stack[i].srt_indx < stack[where_is_biggest_index(stack,
+					size)].srt_indx)
 		{
-			tmp = stack[i].srt_index;
+			tmp = stack[i].srt_indx;
 			ret = i;
 		}
 		i++;
@@ -64,14 +64,14 @@ size_t	where_is_smallest_index(t_stack *stack, size_t size)
 	int		small;
 	size_t	index;
 
-	small = stack[0].srt_index;
+	small = stack[0].srt_indx;
 	index = 0;
 	i = 0;
 	while (i < size)
 	{
-		if (stack[i].srt_index < small)
+		if (stack[i].srt_indx < small)
 		{
-			small = stack[i].srt_index;
+			small = stack[i].srt_indx;
 			index = i;
 		}
 		i++;
@@ -85,14 +85,14 @@ size_t	where_is_biggest_index(t_stack *stack, size_t size)
 	int		big;
 	size_t	index;
 
-	big = stack[0].srt_index;
+	big = stack[0].srt_indx;
 	index = 0;
 	i = 0;
 	while (i < size)
 	{
-		if (stack[i].srt_index > big)
+		if (stack[i].srt_indx > big)
 		{
-			big = stack[i].srt_index;
+			big = stack[i].srt_indx;
 			index = i;
 		}
 		i++;
@@ -107,7 +107,7 @@ int	find_index(t_stack *stack, int index, size_t size)
 	i = 0;
 	while (i < size)
 	{
-		if (stack[i].srt_index == index)
+		if (stack[i].srt_indx == index)
 			return (i);
 		i++;
 	}

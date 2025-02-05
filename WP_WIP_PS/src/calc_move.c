@@ -16,11 +16,11 @@ static int	calc_move_b(t_stack **b, t_stack *elem, size_t size)
 {
 	size_t	tmp;
 
-	if (elem->srt_index == (*b)[0].srt_index)
+	if (elem->srt_indx == (*b)[0].srt_indx)
 		return (0);
 	else
 	{
-		tmp = find_index(*b, elem->srt_index, size);
+		tmp = find_index(*b, elem->srt_indx, size);
 		while (tmp % size != 0)
 		{
 			if (tmp < (size / 2))
@@ -43,10 +43,10 @@ static int	calc_index(t_stack *stack, int index)
 	size_t	i;
 
 	i = 0;
-	while (stack[i].srt_index)
+	while (stack[i].srt_indx)
 	{
-		if (stack[i].srt_index > index)
-			return (stack[i].srt_index);
+		if (stack[i].srt_indx > index)
+			return (stack[i].srt_indx);
 		i++;
 	}
 	return (-1);
@@ -56,10 +56,10 @@ static int	calc_move_a(t_stack **a, t_stack *elem, size_t size)
 {
 	int	tmp_index;
 
-	if (elem->srt_index == 0)
+	if (elem->srt_indx == 0)
 		return (0);
-	tmp_index = find_index(*a, calc_index(*a, elem->srt_index), size);
-	if (tmp_index == -1 || elem->srt_index > (*a)[tmp_index].srt_index)
+	tmp_index = find_index(*a, calc_index(*a, elem->srt_indx), size);
+	if (tmp_index == -1 || elem->srt_indx > (*a)[tmp_index].srt_indx)
 		tmp_index = where_is_biggest_index(*a, size);
 	while (tmp_index % size != 0)
 	{

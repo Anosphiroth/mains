@@ -18,7 +18,7 @@
 typedef struct s_stack
 {
 	int		value;
-	int		srt_index;
+	int		srt_indx;
 	int		ops;
 	int		ra;
 	int		rb;
@@ -26,11 +26,11 @@ typedef struct s_stack
 	int		rrb;
 }			t_stack;
 
-typedef struct s_size
+typedef struct s_stack_size
 {
-	size_t	*size_a;
-	size_t	*size_b;
-}			t_size;
+	size_t	*s_a;
+	size_t	*s_b;
+}			t_stk_size;
 
 t_stack		*init_stack(size_t size);
 t_stack		*fill_stack(t_stack *stack_a, size_t size, char **v);

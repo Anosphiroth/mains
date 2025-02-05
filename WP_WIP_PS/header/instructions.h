@@ -35,6 +35,6 @@ void	exec_print_reverse_rotate(t_stack **stack, char stack_name,
 void	exec_print_smart_rotate(t_stack **stack, char stack_name, t_stack elem,
 			size_t size);
 void	exec_print_push(t_stack **a, t_stack **b, char stack_name,
-			t_size	size);
+			t_stk_size	size);
 
 #endif

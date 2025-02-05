@@ -17,6 +17,13 @@
 # include "sorting.h"
 # include "stack_func.h"
 
+typedef struct s_presort_arg
+{
+	int i;
+    int j;
+    int sqrt;
+}			t_presort_arg;
+
 void	push_swap(t_stack *a, t_stack *b, int size);
 
 int		*dup_stack_in_array(t_stack *stack_a, size_t size, t_stack *stack_b);

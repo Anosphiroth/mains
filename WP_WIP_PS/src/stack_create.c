@@ -27,7 +27,7 @@ t_stack	*init_stack(size_t size)
 	while (i < size)
 	{
 		stack[i].value = 0;
-		stack[i].srt_index = -1;
+		stack[i].srt_indx = -1;
 		i++;
 	}
 	return (stack);
@@ -61,7 +61,7 @@ void	indexing_stack(t_stack **stack, int *sorted_array, size_t size)
 		{
 			if ((*stack)[j].value == sorted_array[i])
 			{
-				(*stack)[j].srt_index = i;
+				(*stack)[j].srt_indx = i;
 				break ;
 			}
 			j++;
