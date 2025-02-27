@@ -1,8 +1,0 @@
-main*
-a.out
-*test*
-.vscode
-*.a
-*.o
-*.sh
-*.gch
